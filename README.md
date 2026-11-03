@@ -4,15 +4,19 @@ A small React (Vite) savings tracker: pick a Porsche, enter what you've saved an
 
 Live site: https://darkry10.github.io/RoadToPorsche/
 
+## Layout
+
+- `app/` — the React source. Edit this.
+- `index.html`, `assets/`, `favicon.svg` at the repo root — the **built** site, generated automatically. Don't edit these by hand.
+
 ## Run locally
 
 ```bash
+cd app
 npm install
 npm run dev
 ```
 
 ## Deploy
 
-Every push to `main` builds the site and publishes it to GitHub Pages via `.github/workflows/deploy.yml`.
-
-One-time setup: in the repo go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+GitHub Pages is set to **Deploy from a branch → main / root**. Every push that changes `app/` runs `.github/workflows/build-site.yml`, which builds the app and commits the result to the repo root; Pages then publishes it.
